@@ -38,6 +38,7 @@ def add_cart(request, product_id):
         # print('passage', product, cart)
         cart_item = CartItem.objects.get(product=product, cart=cart)
         if len(product_variation) > 0:
+            cart_item.variations.clear( )
             for item in product_variation:
                 cart_item.variations.add(item)
         allcartitem = CartItem.objects.all()
@@ -51,6 +52,7 @@ def add_cart(request, product_id):
             cart=cart,
         )
         if len(product_variation) > 0:
+            cart_item.variations.clear( )
             for item in product_variation:
                 cart_item.variations.add(item)
         cart_item.save()
