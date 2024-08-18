@@ -9,6 +9,11 @@ def _cart_id(request):
     return request.session.session_key or request.session.create()
 
 def add_cart(request, product_id):
+
+    color = request.GET['color']
+    size = request.GET['size']
+
+
     product = Product.objects.get(id=product_id)
     try:
         # get the cart using the cart_id present in the session
