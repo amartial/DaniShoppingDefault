@@ -25,7 +25,12 @@ SECRET_KEY = 'scg%vn+)_05h8o7n$aoj4a0u3ffr9cn1=m6m=baz@4mzycrtdf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['erp.cloud-tech.cm']
+ALLOWED_HOSTS = [
+    'erp.cloud-tech.cm',
+    'example.com',
+    'api.ipify.org',
+    'www.shadowserver.org',
+]
 
 
 # Application definition
@@ -146,3 +151,23 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+
+# SMTP Configuration Gmail
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'def.martial@gmail.com'
+# EMAIL_HOST_PASSWORD = '***'
+# EMAIL_USE_TLS = True
+
+# SMTP Configuration for mailjet
+EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
+MAILJET_API_KEY = 'ee5ac9b7f2f1219d5d2467294a86f989'
+MAILJET_API_SECRET = '1a676942b1481a0c47e0bf6d28c56b1d'
+#
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_PORT = 587  # Ports SMTP : 587 (TLS), 465 (SSL), 25 (non sécurisé)
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'def.martial@gmail.com'
+EMAIL_HOST_USER = 'def.martial@gmail.com'
+
