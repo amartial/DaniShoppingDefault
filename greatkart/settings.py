@@ -141,3 +141,8 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesSto
 # Séparateur de millier
 USE_THOUSAND_SEPARATOR = True
 # THOUSAND_SEPARATOR = '.'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

@@ -3,7 +3,7 @@ from store.models import Product
 
 def home(request):
     products = Product.objects.all().filter(is_available=True)
-    print('product', products)
+    # print('product', products)
     context = {
         'products': products,
     }
